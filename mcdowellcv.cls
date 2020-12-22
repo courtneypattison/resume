@@ -23,7 +23,7 @@
 
 % Set up the fonts according to options
 \def\mainfontsize{11pt}
-\def\mainfontface{Times New Roman}
+\def\mainfontface{Times}
 
 \DeclareOption{calibri}{%
   \def\mainfontface{Calibri}
@@ -150,7 +150,7 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
 	\vspace*{\beforesectionheaderspace}
 	% Set text margins to equal \tabcolsep (6pt by default)
 	\begin{adjustwidth}{\sectionheadermargin}{\sectionheadermargin}
-		\textsc{\textbf{#1}}
+		\textsc{\textbf{\MakeUppercase{#1}}}
 	\end{adjustwidth}
 	\smallskip
 	\hrule height \sectionheaderhrlueheight
@@ -170,7 +170,7 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
 	\notblank{#3}{\toggletrue{centertitledefined}}{}
 	\notblank{#4}{\toggletrue{righttitledefined}}{}
 	\ifboolexpr{togl {lefttitledefined} or togl {centertitledefined} or togl {righttitledefined}}{
-		\begin{tabu} to 1\textwidth { X[l,p] X[c,p] X[r,p] }
+		\begin{tabu} to 1\textwidth {X[3,l,p]X[2,c,p]X[3,r,p]}
 			\textbf{#2} & \textbf{#3} & \textbf{#4} \\
 		\end{tabu}
 		% Add space according to the specidied number of lines
