@@ -1,3 +1,3 @@
-# My CV
+# My Resume
 
-![cv](/../master/courtneypattison_cv.png?raw=true)
+![resume](/../master/courtneypattison_cv.png?raw=true)
