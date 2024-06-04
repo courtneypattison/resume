@@ -86,6 +86,7 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
 \def\afterdoublelinesubsectionheaderspace{-10pt}
 \def\aftermultilinesubsectionheaderspace{-6pt}
 \def\afteremptysubsectionheaderspace{3pt}
+\def\aftereducationspace{0pt}
 \def\subsectionmargin{9pt}
 \def\aftersubsectionspace{4pt}
 
@@ -190,5 +191,24 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
 {
 	\end{adjustwidth}
 	\vspace*{\aftersubsectionspace}
+}
+\makeatother
+
+\newenvironment{cveducation}[4][1]{
+	\notblank{#2}{\toggletrue{lefttitledefined}}{}
+	\notblank{#3}{\toggletrue{centertitledefined}}{}
+	\notblank{#4}{\toggletrue{righttitledefined}}{}
+	\ifboolexpr{togl {lefttitledefined} or togl {centertitledefined} or togl {righttitledefined}}{
+		\begin{tabu} to 1\textwidth {X[3,l,p]X[2,c,p]X[3,r,p]}
+			\textbf{#2} & \textbf{#3} & \textbf{#4} \\
+		\end{tabu}
+
+	}{
+		% \vspace*{\aftereducationspace}
+	}
+
+}
+{
+	\vspace*{\aftereducationspace}
 }
 \makeatother
