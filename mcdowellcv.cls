@@ -171,7 +171,7 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
 	\notblank{#3}{\toggletrue{centertitledefined}}{}
 	\notblank{#4}{\toggletrue{righttitledefined}}{}
 	\ifboolexpr{togl {lefttitledefined} or togl {centertitledefined} or togl {righttitledefined}}{
-		\begin{tabu} to 1\textwidth {X[3,l,p]X[2,c,p]X[3,r,p]}
+		\begin{tabu} to 1\textwidth {X[3,l,p]X[3,c,p]X[3,r,p]}
 			\textbf{#2} & \textbf{#3} & \textbf{#4} \\
 		\end{tabu}
 		% Add space according to the specidied number of lines
